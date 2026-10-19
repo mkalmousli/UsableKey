@@ -1,0 +1,6 @@
+name=español US
+dict=es
+r1=q/1 w/2 e/3 r/4 t/5 y/6 u/7 i/8 o/9 p/0
+r2=a/@ s/# d/$ f/% g/& h/- j/+ k/( l/) ñ
+r3=z/* x/" c/' v/: b/; n/! m/?
+acc=e=éèëêęėē u=úüùûū i=íïìîįī o=óòöôõøœōº a=áàäâãåąæāª c=çćč n=ñń

@@ -1,0 +1,6 @@
+name=français qwertz
+dict=fr
+r1=q/1 w/2 e/3 r/4 t/5 z/6 u/7 i/8 o/9 p/0
+r2=<gap,.5> a/@ s/# d/€ f/% g/& h/- j/+ k/( l/) <gap,.5>
+r3=y/* x/" c/' v/: b/; n/! m/?
+acc=e=éèêë%ęėē u=ùû%üúū i=î%ïìíįī o=ôœ%öòóõøōº a=àâ%æáäãåāª y=%ÿ c=çćč

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="dev.usablekey">
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="34"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <application android:label="UsableKey" android:hasCode="true">
+        <service android:name=".ime.KeyboardService" android:exported="true"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter><action android:name="android.view.InputMethod"/></intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method"/>
+        </service>
+        <activity android:name=".settings.SettingsActivity" android:label="UsableKey" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".settings.WordsActivity" android:exported="false"/>
+        <activity android:name=".settings.PermissionsActivity" android:exported="false"/>
+        <activity android:name=".settings.LangsActivity" android:exported="false"/>
+        <activity android:name=".settings.LayoutsActivity" android:exported="false"/>
+        <activity android:name=".media.PermActivity" android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".media.PickActivity" android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:name=".media.ImageProvider" android:authorities="dev.usablekey.images"
+            android:exported="false" android:grantUriPermissions="true"/>
+    </application>
+</manifest>

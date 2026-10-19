@@ -1,0 +1,6 @@
+name=English AZERTY
+dict=en
+r1=a/1 z/2 e/3 r/4 t/5 y/6 u/7 i/8 o/9 p/0
+r2=q/@ s/# d/$ f/% g/& h/- j/+ k/( l/) m
+r3=w/* x/" c/' v/: b/; n/!
+acc=a=àáâäãåæ e=éèêë i=ìíîï o=òóôöõø u=ùúûü c=ç n=ñ s=ß y=ý

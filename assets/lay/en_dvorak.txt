@@ -1,0 +1,6 @@
+name=English Dvorak
+dict=en
+r1=p/1 y/2 f/3 g/4 c/5 r/6 l/7
+r2=a/@ o/# e/$ u/% i/& d/- h/+ t/( n/) s
+r3=q/* j/" k/' x/: b/; m/! w/? v z
+acc=a=àáâäãåæ e=éèêë i=ìíîï o=òóôöõø u=ùúûü c=ç n=ñ s=ß y=ý
