@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Android 1.5+](https://img.shields.io/badge/Android-1.5%2B-3DDC84?logo=android&logoColor=white)
 
-[**Download APK**](https://github.com/mkalmousli/UsableKey/releases/latest) · [**Website**](https://mkalmousli.github.io/UsableKey/) · [Report a bug](https://github.com/mkalmousli/UsableKey/issues)
+[**Download APK**](https://github.com/mkalmousli/UsableKey/releases/latest) · [**Website**](https://al-mo.de/apps/UsableKey/) · [Report a bug](https://github.com/mkalmousli/UsableKey/issues)
 
 <img src="docs/screenshots/07-keyboard.png" width="260" alt="UsableKey keyboard">
 <img src="docs/screenshots/08-emoji.png" width="260" alt="Emoji panel">
