@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="UsableKey logo">
+  <title>UsableKey</title>
+  <rect width="256" height="256" rx="56" fill="#2b2f3a"/>
+  <rect x="28" y="40" width="200" height="196" rx="34" fill="#14161c"/>
+  <rect x="28" y="24" width="200" height="196" rx="34" fill="#c9ccd3"/>
+  <rect x="44" y="38" width="168" height="152" rx="24" fill="#f3efe2"/>
+  <path d="M96 72v62a32 32 0 0 0 64 0V72" fill="none" stroke="#3ddc84" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 52h136" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+</svg>

@@ -1,6 +1,8 @@
 <div align="center">
 
-# ⌨️ UsableKey
+<img src="docs/logo.svg" width="96" alt="UsableKey logo">
+
+# UsableKey
 
 **The tiny, fast keyboard for every Android — runs on Android 1.5+, under 1 MB, 60+ layouts, offline suggestions, emoji and clipboard history.**
 
