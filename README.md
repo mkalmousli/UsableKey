@@ -2,7 +2,7 @@
 
 # ⌨️ UsableKey
 
-**A tiny, fast, private Android keyboard — 60+ layouts, emoji, clipboard history and editing tools in an 800 KB APK.**
+**The tiny, fast keyboard for every Android — runs on Android 1.5+, under 1 MB, 60+ layouts, offline suggestions, emoji and clipboard history.**
 
 [![Build](https://github.com/mkalmousli/UsableKey/actions/workflows/build.yml/badge.svg)](https://github.com/mkalmousli/UsableKey/actions/workflows/build.yml)
 [![Release](https://img.shields.io/github/v/release/mkalmousli/UsableKey?include_prereleases)](https://github.com/mkalmousli/UsableKey/releases/latest)
@@ -28,7 +28,8 @@
 - **Dark / light / AMOLED / blue themes**, adjustable key height and long-press delay
 - **Haptic and sound feedback**, key preview popups
 - **Private by design**: no `INTERNET` permission, no analytics, no accounts. Everything stays on your device
-- **Tiny**: ~800 KB APK, no third-party libraries, runs on Android 1.5+ (minSdk 3)
+- **Runs on old phones**: minSdk 3 (Android 1.5) up to Android 14, so it fits devices most keyboards dropped long ago
+- **Tiny and lean**: whole APK under 1 MB, ~3,700 lines of Java, no third-party libraries
 
 ## Screenshots
 
