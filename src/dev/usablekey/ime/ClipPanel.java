@@ -19,6 +19,9 @@ final class ClipPanel extends LinearLayout implements ClipCard.Act {
     private final PanelHost host;
     private final LinearLayout[] cols = new LinearLayout[2];
     private final ClipTabs tabs;
+    private final ArrayList<Clip> items = new ArrayList<Clip>();
+    private final int[] hs = new int[2];
+    private int next, w;
 
     ClipPanel(Context c, PanelHost h) {
         super(c);
@@ -31,7 +34,13 @@ final class ClipPanel extends LinearLayout implements ClipCard.Act {
             public void clear() { ClipStore.clearUnpinned(getContext()); refresh(); }
         });
         addView(tabs);
-        ScrollView sv = new ScrollView(c);
+        ScrollView sv = new ScrollView(c) {
+            protected void onScrollChanged(int l, int t, int ol, int ot) {
+                super.onScrollChanged(l, t, ol, ot);
+                View wall = getChildAt(0);
+                if (wall != null && t + getHeight() > wall.getHeight() - getHeight()) more();
+            }
+        };
         LinearLayout wall = new LinearLayout(c);
         wall.setPadding(Dp.px(3), 0, Dp.px(3), Dp.px(6));
         for (int i = 0; i < 2; i++) {
@@ -48,24 +57,32 @@ final class ClipPanel extends LinearLayout implements ClipCard.Act {
         tabs.draw(tab);
         cols[0].removeAllViews();
         cols[1].removeAllViews();
-        int w = (getResources().getDisplayMetrics().widthPixels - Dp.px(12)) / 2, n = 0;
-        int[] hs = new int[2];
-        ArrayList<Clip> all = ClipStore.all(getContext());
-        for (Clip k : all) {
-            if (tab == 1 && k.image != null || tab == 2 && k.image == null) continue;
+        w = (getResources().getDisplayMetrics().widthPixels - Dp.px(12)) / 2;
+        hs[0] = hs[1] = 0;
+        items.clear();
+        next = 0;
+        for (Clip k : ClipStore.all(getContext()))
+            if (!(tab == 1 && k.image != null || tab == 2 && k.image == null)) items.add(k);
+        if (items.isEmpty()) {
+            TextView t = Views.tv(getContext(), "Copied text and images show up here", 15, Theme.dim);
+            t.setGravity(Gravity.CENTER);
+            t.setPadding(0, Dp.px(40), 0, 0);
+            cols[0].addView(t);
+            return;
+        }
+        more();
+    }
+
+    /** Adds the next few cards; called on open and whenever scrolling nears the end. */
+    private void more() {
+        for (int n = 0; n < 8 && next < items.size(); n++, next++) {
+            Clip k = items.get(next);
             int c = hs[0] <= hs[1] ? 0 : 1;
             View v = k.image != null ? ClipCard.image(getContext(), k, w, this) : ClipCard.text(getContext(), k, this);
             LayoutParams lp = new LayoutParams(-1, -2);
             lp.setMargins(Dp.px(3), Dp.px(3), Dp.px(3), Dp.px(3));
             cols[c].addView(v, lp);
             hs[c] += k.image != null ? Dp.px(150) : Dp.px(46) + Math.min(k.text.length() / 22, 7) * Dp.px(17);
-            n++;
-        }
-        if (n == 0) {
-            TextView t = Views.tv(getContext(), "Copied text and images show up here", 15, Theme.dim);
-            t.setGravity(Gravity.CENTER);
-            t.setPadding(0, Dp.px(40), 0, 0);
-            cols[0].addView(t);
         }
     }
 
